@@ -1,0 +1,71 @@
+#ifndef WIDGET_H
+#define WIDGET_H
+
+#include <QWidget>
+
+QT_BEGIN_NAMESPACE
+namespace Ui { class Widget; }
+QT_END_NAMESPACE
+
+const int cross = 1;
+const int zero = 2;
+
+class Widget : public QWidget
+{
+    Q_OBJECT
+
+public:
+    Widget(QWidget *parent = nullptr);
+    ~Widget();
+    int mass[9] = {0};
+    int check[18] = {0};
+    int count = 0;
+    bool motion;
+
+private slots:
+    void check_motion();
+    
+    void disable_buttons();
+
+    void check_win();
+
+    void on_top_left_cross_button_clicked();
+
+    void on_middle_left_cross_button_clicked();
+
+    void on_down_left_cross_button_clicked();
+
+    void on_top_middle_cross_button_clicked();
+
+    void on_middle_middle_cross_button_clicked();
+
+    void on_down_middle_cross_button_clicked();
+
+    void on_top_right_cross_button_clicked();
+
+    void on_middle_right_cross_button_clicked();
+
+    void on_down_right_cross_button_clicked();
+
+    void on_top_left_zero_button_clicked();
+
+    void on_middle_left_zero_button_clicked();
+
+    void on_down_left_zero_button_clicked();
+
+    void on_top_middle_zero_button_clicked();
+
+    void on_middle_middle_zero_button_clicked();
+
+    void on_down_middle_zero_button_clicked();
+
+    void on_top_right_zero_button_clicked();
+
+    void on_down_right_zero_button_clicked();
+
+    void on_middle_right_zero_button_clicked();
+
+private:
+    Ui::Widget *ui;
+};
+#endif // WIDGET_H
